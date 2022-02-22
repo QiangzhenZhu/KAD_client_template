@@ -66,10 +66,8 @@ public class CSMConstant {
 
     //模拟量子类型
     public static class CSMSubAQDataType{
+        //电源
         public static final int TYPE_AQ_SUPPLY_PANEL_V =0X10;//电源屏电压
-        /**
-         * more
-         */
         public static final int TYPE_AQ_EXTERNAL_GRID_M = 0X11;//外电网监测
         public static final int TYPE_AQ_UPS = 0X12;//UPS
 
