@@ -29,7 +29,13 @@ public class CSMConstant {
         public static final int TYPE_MEMORY = 0X01;//内存压缩
         public static final int TYPE_8KB = 0XF0;//数据包长度大于8kb
     }
-
+    //模拟量精度
+    public static class CSMAQAccuracyType{
+        public static final int TYPE_01 = 0X01;//精度为0.01
+        public static final int TYPE_10 = 0X10;//精度为0.1
+        public static final int TYPE_00 = 0X00;//精度为1
+        public static final int TYPE_11 = 0X11;//精度为10
+    }
     // 数据类型
     public static class CSMDataType{
         public static final int TYPE_AQ_REAL_TIME_VALUE = 0X11;//模拟量实时值
@@ -70,6 +76,7 @@ public class CSMConstant {
         /**
          * more
          */
+
     }
 
     //记录曲线分类
@@ -78,6 +85,7 @@ public class CSMConstant {
         /**
          * more
          */
+
     }
 
     //报警子类型

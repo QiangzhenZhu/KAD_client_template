@@ -15,8 +15,11 @@ class DataSessionFrameTest {
 
     @Test
     void getBytes() {
-        DataSessionFrame dataSessionFrame = new DataSessionFrame();
+        /*DataSessionFrame dataSessionFrame = new DataSessionFrame();
         byte[] bytes = dataSessionFrame.getBytes();
-        System.out.printf(BytesUtil.bytesToHex(bytes));
+        System.out.printf(BytesUtil.bytesToHex(bytes));*/
+        float value = BytesUtil.byteToFloat(new byte[]{0x01,0x01});
+        System.out.println(value);
+
     }
 }

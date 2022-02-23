@@ -1,5 +1,7 @@
 package cn.kad.utils;
 
+import cn.kad.constant.CSMConstant;
+
 import java.io.ByteArrayOutputStream;
 import java.io.IOException;
 import java.io.ObjectOutputStream;
@@ -8,7 +10,7 @@ import java.util.Arrays;
 import java.util.List;
 
 /**
- * @Classname HeartBeatSessionFrameTest
+ * @Classname BytesUtil
  * @Description TODO
  * @Date 2022/2/22 10:24
  * @Created by zzq
@@ -41,11 +43,17 @@ public class BytesUtil {
         return Arrays.copyOf(bytes,3);
     }
 
-    //3个byte转换成int
-    public static int 3BytesToInt(){
-
+    // byte to float
+    public static float byteToFloat(byte[] b){
+        short value = (short) ((short) (b[1] << 8 & 0x1f00) | b[0] & 0x000f);
+        byte exp = (byte) ((byte) (b[1] & 0x60) >> 5);
+        return (float) (Math.pow(10,exp) * value);
     }
 
+    //float to byte
+    public static byte[] floatToByte(float f){
+        return new byte[]{};
+    }
     //bytes数组转换成string方便打印
     public static String bytesToHex(byte[] bytes) {
         StringBuilder sb = new StringBuilder();
@@ -68,7 +76,6 @@ public class BytesUtil {
             byteList.add(b);
         }
         return byteList;
-
     }
 
     public static byte[] objectToBytes(Object o) throws IOException {
